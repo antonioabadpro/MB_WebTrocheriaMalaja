@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO OPTIMIZATION -->
+  <title>Test Diagnóstico: ¿Trochería o Malajá? - [2025]</title>
+  <meta name="description"
+    content="Realiza este test gratuito para saber si tu personalidad tiende a la trochería exagerada o a la malajá profunda. Resultados inmediatos." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?=Outfit:wght@300;400;700;900&display=swap" />
+
+  <!-- Tailwind & Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-100">
+    <div class="w-full mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center gap-2 text-[#005eb8] font-black text-xl tracking-tight justify-start">
+        <i data-lucide="map-pin"></i>
+        <a href="index.html"><span>Diccionario<span class="text-slate-800">Choquero</span></span></a>
+      </div>
+      <ul class="hidden md:flex gap-8 text-sm font-bold text-slate-600 items-center">
+        <li>
+          <a href="#definiciones" class="hover:text-[#005eb8] transition">Definiciones</a>
+        </li>
+        <li>
+          <a href="#historia" class="hover:text-[#005eb8] transition">Historia Real</a>
+        </li>
+        <li>
+          <a href="#comparativa" class="hover:text-[#005eb8] transition">La Tabla</a>
+        </li>
+        <li>
+          <a href="test.html"
+            class="bg-[#005eb8] text-white px-5 py-2 rounded-full hover:bg-blue-700 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+            Test Rápido
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="diagnosis-container">
+    <section class="test-card">
+      <h1 class="text-6xl font-bold">Test de Personalidad</h1>
+      <p class="intro-text">
+        Responde con sinceridad para saber si sufres de
+        <strong>Trochería</strong> crónica o tienes el gen de la
+        <strong>Malajá</strong>.
+      </p>
+
+      <form id="diagnosis-form">
+        <!-- PREGUNTA 1 -->
+        <div class="question-block">
+          <p class="question-title">
+            1. Te piden que cortes "un trocito" de pan para la cena.
+          </p>
+          <div class="options-grid">
+            <div>
+              <input type="radio" id="q1a" name="q1" value="A" required />
+              <label for="q1a" class="option-label">Cortas media barra y la abres por la mitad para hacer un
+                bocadillo gigante.</label>
+            </div>
+            <div>
+              <input type="radio" id="q1b" name="q1" value="B" />
+              <label for="q1b" class="option-label">Cortas una rebanada fina, suspiras y dices "toma,
+                pesado".</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- PREGUNTA 2 -->
+        <div class="question-block">
+          <p class="question-title">
+            2. Un amigo cuenta un chiste que no tiene ninguna gracia.
+          </p>
+          <div class="options-grid">
+            <div>
+              <input type="radio" id="q2a" name="q2" value="A" required />
+              <label for="q2a" class="option-label">Te ríes tan fuerte que te caes de la silla y tiras la mesa
+                (exagerado).</label>
+            </div>
+            <div>
+              <input type="radio" id="q2b" name="q2" value="B" />
+              <label for="q2b" class="option-label">Le miras fijamente a los ojos sin parpadear hasta que se
+                calla.</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- PREGUNTA 3 -->
+        <div class="question-block">
+          <p class="question-title">
+            3. Tienes que explicar una dirección a un turista.
+          </p>
+          <div class="options-grid">
+            <div>
+              <input type="radio" id="q3a" name="q3" value="A" required />
+              <label for="q3a" class="option-label">Le acompañas hasta el sitio, le invitas a comer y le cuentas
+                la historia de tu pueblo.</label>
+            </div>
+            <div>
+              <input type="radio" id="q3b" name="q3" value="B" />
+              <label for="q3b" class="option-label">Señalas con la barbilla hacia allá y sigues andando.</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- PREGUNTA 4 -->
+        <div class="question-block">
+          <p class="question-title">
+            4. Vas a comprar "cuatro cosas" al supermercado.
+          </p>
+          <div class="options-grid">
+            <div>
+              <input type="radio" id="q4a" name="q4" value="A" required />
+              <label for="q4a" class="option-label">Vuelves con dos carros llenos, un jamón y una tele que estaba
+                de oferta.</label>
+            </div>
+            <div>
+              <input type="radio" id="q4b" name="q4" value="B" />
+              <label for="q4b" class="option-label">Compras solo lo justo y te quejas del precio en la
+                cola.</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="loading-spinner" id="spinner"></div>
+        <button type="submit" class="submit-btn" id="btn-submit">
+          Calcular Diagnóstico
+        </button>
+      </form>
+
+      <!-- RESULTADO -->
+      <div id="result-box">
+        <h2 id="result-title">Calculando...</h2>
+        <p id="result-desc">
+          El algoritmo está analizando tu nivel de gracia.
+        </p>
+        <a href="index.html"
+          class="inline-block bg-white text-slate-900 font-bold px-8 py-3 rounded-full mt-6 shadow-lg hover:scale-105 transition-transform duration-200 hover:shadow-xl">
+          Volver a la Guía
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-[#adb5bd] py-8 mt-auto text-sm">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+
+        <div class="mb-4 text-left">
+          <h6 class="font-bold mb-2 text-white text-base">Sobre Nosotros</h6>
+          <p class="mb-0 text-slate-400 opacity-80 leading-relaxed">
+            Diccionario Choquero Unificado. Proyecto MB.
+          </p>
+          <p class="mt-16 text-xs text-slate-500 font-mono opacity-50">
+            <span class="font-bold text-slate-400">Palabras clave:</span> trochería, malajá
+          </p>
+        </div>
+
+        <div class="mb-4 text-left md:pl-16">
+          <h6 class="font-bold mb-2 text-white text-base">Enlaces</h6>
+          <ul class="list-none mb-0 flex flex-col gap-2">
+            <li><a href="index.html"
+                class="no-underline text-[#dee2e6] hover:text-white transition-colors duration-300">Inicio</a>
+            </li>
+            <li><a href="https://www.uhu.es/" target="_blank"
+                class="no-underline text-[#dee2e6] hover:text-white transition-colors duration-300">UHU</a></li>
+            <li><a href="https://www.uhu.es/etsi/" target="_blank"
+                class="no-underline text-[#dee2e6] hover:text-white transition-colors duration-300">ETSI</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mb-4 text-left">
+          <h6 class="font-bold mb-2 text-white text-base">Contacto</h6>
+          <div class="text-slate-400 opacity-80">
+            <div class="mb-2 flex flex-col gap-1">
+              <span class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i>
+                antonioabad.hernandez@alu.uhu.es</span>
+              <span class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i>
+                enrique.lobo@alu.uhu.es</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4"></i> Huelva, España
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-4 text-left">
+          <h6 class="font-bold mb-2 text-white text-base">Dónde estamos</h6>
+          <div style="width: 100%; height: 120px; border-radius: 8px; overflow: hidden; border: 1px solid #555;">
+            <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+              src="https://maps.google.com/maps?q=37.27276332163678,-6.924417095160905&hl=es&z=14&output=embed">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-4 border-gray-700 opacity-50">
+      <div class="text-center">
+        <p class="mb-0 text-slate-400 text-xs opacity-70 leading-relaxed">
+          &copy; 2025. Proyecto de Optimización de SEO. Todos los derechos reservados. <br>
+          Antonio Abad Hernández Gálvez <br>
+          Enrique Lobo Rubio <br>
+          Motores de Búsqueda (MB)
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="funciones.js"></script>
+</body>
+
+</html>
