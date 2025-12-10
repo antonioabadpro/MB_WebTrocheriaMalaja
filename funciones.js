@@ -86,6 +86,25 @@ function calcularDiagnostico(e) {
 }
 
 // Attach Event Listener
-document
-    .getElementById("diagnosis-form")
-    .addEventListener("submit", calcularDiagnostico);
+// Attach Event Listener
+const diagnosisForm = document.getElementById("diagnosis-form");
+if (diagnosisForm) {
+    diagnosisForm.addEventListener("submit", calcularDiagnostico);
+}
+
+// Mobile Menu Logic
+const mobileBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+}

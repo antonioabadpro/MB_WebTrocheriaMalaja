@@ -26,7 +26,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-100">
+  <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-[100] border-b border-slate-100">
     <div class="w-full mx-auto px-4 py-3 flex justify-between items-center">
       <div class="flex items-center gap-2 text-[#005eb8] font-black text-xl tracking-tight justify-start">
         <i data-lucide="map-pin"></i>
@@ -34,13 +34,13 @@
       </div>
       <ul class="hidden md:flex gap-8 text-sm font-bold text-slate-600 items-center">
         <li>
-          <a href="#definiciones" class="hover:text-[#005eb8] transition">Definiciones</a>
+          <a href="index.html#definiciones" class="hover:text-[#005eb8] transition">Definiciones</a>
         </li>
         <li>
-          <a href="#historia" class="hover:text-[#005eb8] transition">Historia Real</a>
+          <a href="index.html#historia" class="hover:text-[#005eb8] transition">Historia Real</a>
         </li>
         <li>
-          <a href="#comparativa" class="hover:text-[#005eb8] transition">La Tabla</a>
+          <a href="index.html#comparativa" class="hover:text-[#005eb8] transition">La Tabla</a>
         </li>
         <li>
           <a href="test.html"
@@ -49,6 +49,25 @@
           </a>
         </li>
       </ul>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-slate-700 hover:text-[#005eb8] focus:outline-none">
+        <i data-lucide="menu" size="28"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Container -->
+    <div id="mobile-menu"
+      class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full left-0 top-full shadow-lg z-[100]">
+      <div class="flex flex-col p-4 space-y-4 font-bold text-slate-600">
+        <a href="index.html#definiciones" class="hover:text-[#005eb8] py-2 border-b border-slate-50">Definiciones</a>
+        <a href="index.html#historia" class="hover:text-[#005eb8] py-2 border-b border-slate-50">Historia Real</a>
+        <a href="index.html#comparativa" class="hover:text-[#005eb8] py-2 border-b border-slate-50">La Tabla</a>
+        <a href="test.html"
+          class="bg-[#005eb8] text-white px-5 py-3 rounded-xl text-center shadow hover:bg-blue-700 transition">
+          Test Rápido
+        </a>
+      </div>
     </div>
   </nav>
 
