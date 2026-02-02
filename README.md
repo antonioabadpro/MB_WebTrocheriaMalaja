@@ -62,7 +62,7 @@ MB_WebTrocheriaMalaja/
 
 ## 📑 Documentación y Presentación
 
-[![Presentación](https://img.shields.io/badge/PDF-Ver_Presentación-EC1C24?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/user-attachments/files/25022656/MB_Presentacion.AAD.3.pdf)
+[![Presentación](https://img.shields.io/badge/PDF-Ver_Presentación-EC1C24?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://github.com/antonioabadpro/MB_WebTrocheriaMalaja/blob/main/MB_Presentaci%C3%B3n%20AAD%203.pdf)
 
 > **Nota:** Haz clic en el botón de arriba para visualizar o descargar la presentación del proyecto en PDF donde se explican en detalle las técnicas llevadas a cabo, la evolución temporal durante las primeras semanas y el análisis exhaustivo de los resultados obtenidos.
 
